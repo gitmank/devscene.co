@@ -31,6 +31,7 @@ main {
   max-width: calc(100% - 2em);
   margin: auto;
   padding: 3em 1em;
+  background-color: black;
 }
 h1,
 h2,
@@ -86,7 +87,6 @@ img {
 }
 code {
   padding: 2px 5px;
-  background-color: rgb(var(--gray-light));
   border-radius: 2px;
 }
 pre {
@@ -97,14 +97,14 @@ pre > code {
   all: unset;
 }
 blockquote {
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid greenyellow;
   padding: 0 0 0 20px;
   margin: 0px;
   font-size: 1.333em;
 }
 hr {
   border: none;
-  border-top: 1px solid rgb(var(--gray-light));
+  border-top: 1px solid whitesmoke;
 }
 @media (max-width: 720px) {
   body {
