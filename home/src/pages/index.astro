@@ -3,51 +3,61 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { Image } from "astro:assets";
+import bitbybit from "../assets/bitbybit.png";
+import ekfraseis from "../assets/ekfraseis.png";
+import fusion from "../assets/fusion.png";
+import healthotech from "../assets/healthotech.png";
+import insights from "../assets/insights.png";
+import iosclub from "../assets/iosclub.png";
+import meraki from "../assets/meraki.png";
+import nebula from "../assets/sedsnebula.jpg";
+import technomech from "../assets/technomech.jpg";
 
 const clients = [
   {
     name: "Meraki",
-    logo: "/logos/meraki.png",
+    logo: meraki,
     link: "https://www.linkedin.com/company/meraki-the-fine-arts-club/",
   },
   {
     name: "Healthotech",
-    logo: "/logos/healthotech.png",
+    logo: healthotech,
     link: "https://www.linkedin.com/company/healthotech/",
   },
   {
     name: "iOS Club",
-    logo: "/logos/iosclub.png",
+    logo: iosclub,
     link: "https://theiosclub.github.io",
   },
   {
     name: "SEDS Nebula Chapter",
-    logo: "/logos/sedsnebula.jpg",
+    logo: nebula,
     link: "https://www.linkedin.com/company/seds-nebula/",
   },
   {
     name: "Insights Club",
-    logo: "/logos/insights.png",
+    logo: insights,
     link: "https://www.instagram.com/insights_club/",
   },
   {
     name: "BitbyBit, VIT Bhopal",
-    logo: "/logos/bitbybit.png",
+    logo: bitbybit,
     link: "https://www.instagram.com/bitbybit_vitb/",
   },
   {
     name: "Ekfraseis Dramatics Society",
-    logo: "/logos/ekfraseis.png",
+    logo: ekfraseis,
     link: "https://www.instagram.com/ekfraseis.dramatics/",
   },
   {
     name: "The Fusion Club",
-    logo: "/logos/fusion.png",
+    logo: fusion,
     link: "https://thefusionclub.in",
   },
   {
     name: "Technomech",
-    logo: "/logos/technomech.jpg",
+    logo: technomech,
     link: "https://www.linkedin.com/in/technomech-vit-bhopal/",
   },
 ];
@@ -129,10 +139,10 @@ const clients = [
           clients.map((item) => (
             <a
               href={item.link}
-              class="inline-block ticker mr-5 h-[50px] lg:h-[100px] border-[0.5px] border-gray-700 hover:scale-[1.01] duration-100 rounded-md"
+              class="inline-block ticker mr-5 h-[50px] border-[0.5px] border-gray-700 hover:scale-[1.01] duration-100 rounded-md"
             >
               <p class="sr-only">{item.name}</p>
-              <img src={item.logo} alt={item.name} class="h-full" />
+              <Image src={item.logo} alt={item.name} class="" height={50} />
             </a>
           ))
         }
