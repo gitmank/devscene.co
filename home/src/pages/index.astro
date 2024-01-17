@@ -1,50 +1,143 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const clients = [
+  {
+    name: "Meraki",
+    logo: "/logos/meraki.png",
+    link: "https://www.linkedin.com/company/meraki-the-fine-arts-club/",
+  },
+  {
+    name: "Healthotech",
+    logo: "/logos/healthotech.png",
+    link: "https://www.linkedin.com/company/healthotech/",
+  },
+  {
+    name: "iOS Club",
+    logo: "/logos/iosclub.png",
+    link: "https://theiosclub.github.io",
+  },
+  {
+    name: "SEDS Nebula Chapter",
+    logo: "/logos/sedsnebula.jpg",
+    link: "https://www.linkedin.com/company/seds-nebula/",
+  },
+  {
+    name: "Insights Club",
+    logo: "/logos/insights.png",
+    link: "https://www.instagram.com/insights_club/",
+  },
+  {
+    name: "BitbyBit, VIT Bhopal",
+    logo: "/logos/bitbybit.png",
+    link: "https://www.instagram.com/bitbybit_vitb/",
+  },
+  {
+    name: "Ekfraseis Dramatics Society",
+    logo: "/logos/ekfraseis.png",
+    link: "https://www.instagram.com/ekfraseis.dramatics/",
+  },
+  {
+    name: "The Fusion Club",
+    logo: "/logos/fusion.png",
+    link: "https://thefusionclub.in",
+  },
+  {
+    name: "Technomech",
+    logo: "/logos/technomech.jpg",
+    link: "https://www.linkedin.com/in/technomech-vit-bhopal/",
+  },
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main class="flex flex-col h-[40vh] justify-center gap-5">
+      <h1
+        class="font-bold text-4xl md:text-6xl my-5 lg:my-10 self-center text-center"
+      >
+        <span class="text-green-400">&gt;&nbsp;</span>devscene co.
+      </h1>
+      <p
+        class="text-xl md:text-2xl lg:text-3xl self-center text-center italic px-5"
+      >
+        we solve annoying problems with hacky products that the community loves
+        &lt;3
+      </p>
+    </main>
+    <main class="flex flex-col h-max justify-start gap-16">
+      <h1 class="font-bold text-2xl md:text-3xl">products & services</h1>
+      <section class="grid grid-cols-1 md:grid-cols-2 w-full gap-5 -mt-5">
+        <section
+          class="flex flex-col border rounded-lg w-full p-4 bg-gray-950 shadow-md"
+        >
+          <h2 class="font-bold text-2xl">
+            <span class="text-green-400">&gt;&nbsp;</span>passes
+          </h2>
+          <p class="text-lg">
+            turns google form registrations into beautiful QR tickets. addons
+            include mailing, attendance, and more!
+          </p>
+        </section>
+        <section
+          class="flex flex-col border rounded-lg w-full p-4 bg-gray-950 shadow-md"
+        >
+          <h2 class="font-bold text-xl">
+            <span class="text-green-400">&gt;&nbsp;</span>project<span
+              class="text-green-400">&nbsp;Charlie</span
+            >
+          </h2>
+          <p class="text-lg">
+            we have sooo many ideas, but we've selected one to work on first.
+            we'll be launching it soon!
+          </p>
+        </section>
+      </section>
+      <h1 class="font-bold text-2xl md:text-3xl">our stats</h1>
+      <section class="grid grid-cols-2 md:grid-cols-3 w-full gap-5 -mt-5">
+        <section
+          class="flex flex-col border rounded-lg w-full p-4 bg-gray-950 shadow-md"
+        >
+          <h2 class="font-bold text-xl">
+            <span class="text-green-400">&gt;&nbsp;</span>events served
+          </h2>
+          <p class="text-5xl text-green-400">11</p>
+        </section>
+        <section
+          class="flex flex-col border rounded-lg w-full p-4 bg-gray-950 shadow-md"
+        >
+          <h2 class="font-bold text-xl">
+            <span class="text-green-400">&gt;&nbsp;</span>users served
+          </h2>
+          <p class="text-5xl text-green-400">4000+</p>
+        </section>
+      </section>
+      <h1 class="font-bold text-2xl md:text-3xl">our clients</h1>
+      <section
+        id="client-list"
+        class="overflow-x-scroll overflow-y-hidden whitespace-nowrap -mt-10 gap-5 no-scrollbar"
+      >
+        {
+          clients.map((item) => (
+            <a
+              href={item.link}
+              class="inline-block ticker mr-5 h-[50px] lg:h-[100px] border-[0.5px] border-gray-700 hover:scale-[1.01] duration-100 rounded-md"
+            >
+              <p class="sr-only">{item.name}</p>
+              <img src={item.logo} alt={item.name} class="h-full" />
+            </a>
+          ))
+        }
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
