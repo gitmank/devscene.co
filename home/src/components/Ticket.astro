@@ -1,0 +1,66 @@
+---
+const { user, uuid } = Astro.props;
+const { name, email, day, utr, isApproved, isValid } = user;
+---
+
+<article
+  class="flex bg-black items-center justify-center text-black box flex-col self-center w-11/12 md:w-8/12 lg:w-6/12 max-w-[600px] h-max bg-gradient-to-br from-blue-500 via-indigo-500 to-blue-700 rounded-xl p-5"
+>
+  <div
+    id="3d-card"
+    class="card select-none border-2 border-black rounded-lg bg-white gap-2 p-2 flex flex-col h-full w-full items-center justify-center"
+  >
+    <div class="flex flex-col w-full h-full p-3 gap-3 bg-white rounded-md">
+      <div class="flex flex-col w-full h-max">
+        <h1 class="flex text-xl lg:text-2xl h-max w-full font-bold">{name}</h1>
+        <h1
+          class="flex text-base lg:text-xl h-max w-full pb-2 font-bold border-b-[1px] border-black"
+        >
+          {email.split("@")[0]}
+        </h1>
+        <h1
+          class="flex text-lg h-max w-full py-1 font-bold border-b-[1px] border-black"
+        >
+          {day} Pass
+        </h1>
+      </div>
+      <div
+        class="flex flex-col gap-3 lg:gap-5 justify-center w-full h-full text-base"
+      >
+        {
+          isApproved ? (
+            <div class="flex gap-2 flex-row items-center justify-start text-base h-max">
+              <img src={"/yes.png"} width={25} height={25} alt={"cross sign"} />
+              <h1 class="text-base pt-1">Registration Approved</h1>
+            </div>
+          ) : (
+            <div class="flex gap-2 flex-row items-center justify-start text-base h-max">
+              <img src={"/no.png"} width={25} height={25} alt={"tick sign"} />
+              <h1 class="text-base pt-1">Approval Pending</h1>
+            </div>
+          )
+        }
+        {
+          isApproved ? (
+            <div class="flex gap-2 flex-row items-center justify-start text-base h-max">
+              <img src={"/yes.png"} width={25} height={25} alt={"cross sign"} />
+              <h1 class="text-base pt-1">Pass Valid</h1>
+            </div>
+          ) : (
+            <div class="flex gap-2 flex-row items-center justify-start text-base h-max">
+              <img src={"/no.png"} width={25} height={25} alt={"tick sign"} />
+              <h1 class="text-base pt-1">Pass Expired</h1>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</article>
+<h6 class="text-center select-none text-xs lg:text-sm pt-5">
+  tickets powered by&nbsp;<span
+    class="bg-black p-1 lg:p-2 rounded-[5px] text-white"
+    ><span class="text-green-500">&#62;</span>&nbsp;devscene</span
+  >
+</h6>
+<h6 class="text-center text-[10px] lg:text-xs pt-2 lg:pt-3">{uuid}</h6>

@@ -1,0 +1,37 @@
+---
+export const prerender = false;
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import Ticket from "../../components/Ticket.astro";
+const uuid = Astro.url.pathname.split("/").pop();
+const user = await fetch(
+  `https://devscene-passes-34a63iqxqq-el.a.run.app/user/${uuid}`
+)
+  .then((res) => res.json())
+  .catch((err) => {
+    return {
+      name: "Not Found",
+      email: "invalid registration ID",
+      day: "Invalid",
+      utr: "Invalid Pass",
+      isApproved: false,
+      isValid: false,
+    };
+  });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main class="flex flex-col h-screen justify-center gap-4">
+      <Ticket uuid={uuid} user={user} />
+    </main>
+    <!-- <Footer /> -->
+  </body>
+</html>
