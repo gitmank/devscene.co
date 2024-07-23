@@ -1,13 +1,17 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+import HeaderLink from "./HeaderLink.astro";
 ---
 
 <header>
-	<nav class="flex flex-row justify-between items-center w-full h-max px-5 border-b border-gray-300">
-		<h1 class="text-2xl mt-1"><span class=" text-green-400 font-bold">&gt;&nbsp;</span>devscene</h1>
-		<div class="flex flex-row gap-5">
-			<HeaderLink href="/">home</HeaderLink>
-			<HeaderLink href="/blog">blog</HeaderLink>
-		</div>
-	</nav>
+  <nav
+    class="flex flex-row justify-between items-center w-full h-max px-5 p-2 border-b border-gray-300"
+  >
+    <a href="/" class="text-xl mt-1 no-underline">
+      <span class="text-green-400 font-bold">&gt;&nbsp;</span>devscene
+    </a>
+    <div class="flex flex-row gap-5">
+      <HeaderLink href="/">home</HeaderLink>
+      <HeaderLink href="/blog">blog</HeaderLink>
+    </div>
+  </nav>
 </header>
