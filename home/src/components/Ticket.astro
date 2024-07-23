@@ -1,6 +1,6 @@
 ---
 const { user, uuid } = Astro.props;
-const { name, email, day, utr, isApproved, isValid } = user;
+const { name, day, regNum, isApproved, isValid } = user;
 ---
 
 <article
@@ -16,7 +16,7 @@ const { name, email, day, utr, isApproved, isValid } = user;
         <h1
           class="flex text-base lg:text-xl h-max w-full pb-2 font-bold border-b-[1px] border-black"
         >
-          {email.split("@")[0]}
+          {regNum}
         </h1>
         <h1
           class="flex text-lg h-max w-full py-1 font-bold border-b-[1px] border-black"
